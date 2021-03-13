@@ -1,0 +1,16 @@
+package com.stackroute.userservice.services;
+
+import com.stackroute.userservice.exception.UserAlreadyExistsException;
+import com.stackroute.userservice.exception.UserNotFoundException;
+import com.stackroute.userservice.model.User;
+
+public interface UserService {
+	
+	boolean saveUser(User user) throws UserAlreadyExistsException;
+	
+	public User findByUserIdAndPassword(String userId, String password) throws UserNotFoundException;
+
+	User updateUser(User user,String userID)throws UserNotFoundException;
+	
+	User viewUser(String userID) throws UserNotFoundException;
+}
